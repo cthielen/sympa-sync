@@ -14,9 +14,9 @@ puts "Existing applications:"
 applications.each do |application|
   puts application.name
   if sympa_lists.include? application.name
-    puts "found in list"
+    puts "\tfound in list"
   else
-    puts "not found in list"
+    puts "\tnot found in list"
   end
 end
 
@@ -24,5 +24,5 @@ puts "New lists:"
 
 # Check to see if any lists weren't synced (new lists)
 sympa_lists.reject{|key,value| value[:touched] == true }.each do |new_list|
-
+  puts "\t#{new_list}"
 end
